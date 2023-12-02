@@ -3,10 +3,10 @@ name: Build & deploy
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -27,9 +27,6 @@ jobs:
     
     - name: Build release project
       run: flutter build web --release
-
-    - name: create cname
-      run: echo 'spider-water.com' > ./build/web/CNAME
 
     - name: Upload production-ready build files
       uses: actions/upload-artifact@v2
